@@ -17,7 +17,7 @@ class User(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     login: Mapped[str] = mapped_column(String(20), unique=True)
-    messages: Mapped[List["Message"]] = relationship(back_populates="users", lazy="selectin")
+    messages: Mapped[List["Message"]] = relationship(back_populates="user", lazy="selectin")
 
 
 class Message(Base):
